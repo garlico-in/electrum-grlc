@@ -149,9 +149,9 @@ Implementing new features, or improving/refactoring the codebase, is of course
 also welcome, but to avoid wasted effort, especially for larger changes,
 we encourage discussing these on the issue tracker or IRC first.
 
-Besides `GitHub`_, some communication about Electrum-GRLC development happens on Discord, in the
-:code:`#public-dev` channel on GRLC'Cord. The easiest way to participate is to join here, `web.libera.chat`_.
+Besides `GitLab`_, some communication about Electrum-GRLC development happens on Discord, in the
+:code:`#public-dev` channel on GRLC'Cord. The easiest way to participate is to join here, `GRLC_Cord`_.
 
 
-.. _web.libera.chat: https://discord.gg/XDVbGVRkwx
+.. _GRLC_Cord: https://discord.gg/XDVbGVRkwx
 .. _GitHub: https://gitlab.com/open-blockchain/electrum-grlc
