@@ -1,0 +1,26 @@
+{
+    "de.node.garlio.in": {
+        "pruning": "-",
+        "s": "50002",
+        "t": "50001",
+        "version": "1.1"
+    },
+    "sg.node.garlio.in": {
+        "pruning": "-",
+        "s": "50004",
+        "t": "50003",
+        "version": "1.2"
+    },
+    "ca.node.garlio.in": {
+        "pruning": "-",
+        "s": "443",
+        "t": "50001",
+        "version": "1.4"
+    },
+    "us.node.garlio.in": {
+        "pruning": "-",
+        "s": "50004",
+        "t": "50003",
+        "version": "1.4"
+    }
+}

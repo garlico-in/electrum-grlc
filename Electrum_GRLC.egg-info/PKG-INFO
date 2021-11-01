@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: Electrum-GRLC
+Version: 4.1.5
+Summary: Lightweight Garlicoin Wallet
+Home-page: https://garlicoin.io
+Author: squ3aky
+Author-email: squ3aky@open-blockchain.io
+License: MIT Licence
+Description: Lightweight Garlicoin Wallet
+Platform: UNKNOWN
+Requires-Python: >=3.6.1
+Provides-Extra: crypto
+Provides-Extra: fast
+Provides-Extra: full
+Provides-Extra: gui
+Provides-Extra: hardware
+Provides-Extra: tests

@@ -92,7 +92,7 @@ info "preparing electrum-ltc-locale."
     cd "$PROJECT_ROOT"
     git submodule update --init
 
-    pushd "$CONTRIB"/deterministic-build/electrum-ltc-locale
+    pushd "$CONTRIB"/deterministic-build/electrum-grlc-locale
     if ! which msgfmt > /dev/null 2>&1; then
         fail "Please install gettext"
     fi

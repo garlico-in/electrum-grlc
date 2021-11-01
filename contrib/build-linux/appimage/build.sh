@@ -44,9 +44,9 @@ fi
 info "building binary..."
 sudo docker run -it \
     --name electrum-appimage-builder-cont \
-    -v "$PROJECT_ROOT_OR_FRESHCLONE_ROOT":/opt/electrum-ltc \
+    -v "$PROJECT_ROOT_OR_FRESHCLONE_ROOT":/opt/electrum-grlc \
     --rm \
-    --workdir /opt/electrum-ltc/contrib/build-linux/appimage \
+    --workdir /opt/electrum-grlc/contrib/build-linux/appimage \
     electrum-appimage-builder-img \
     ./make_appimage.sh
 

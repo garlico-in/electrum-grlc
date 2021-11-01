@@ -6,9 +6,9 @@
 ;--------------------------------
 ;Variables
 
-  !define PRODUCT_NAME "Electrum-LTC"
-  !define PRODUCT_WEB_SITE "https://github.com/pooler/electrum-ltc"
-  !define PRODUCT_PUBLISHER "Electrum Technologies GmbH"
+  !define PRODUCT_NAME "Electrum-GRLC"
+  !define PRODUCT_WEB_SITE "https://gitlab.com/open-blockchain/electrum-grlc"
+  !define PRODUCT_PUBLISHER "Open-Blockchain.io"
   !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 
 ;--------------------------------
@@ -16,7 +16,7 @@
 
   ;Name and file
   Name "${PRODUCT_NAME}"
-  OutFile "dist/electrum-ltc-setup.exe"
+  OutFile "dist/electrum-grlc-setup.exe"
 
   ;Default installation folder
   InstallDir "$PROGRAMFILES\${PRODUCT_NAME}"
@@ -72,7 +72,7 @@
   !define MUI_ABORTWARNING
   !define MUI_ABORTWARNING_TEXT "Are you sure you wish to abort the installation of ${PRODUCT_NAME}?"
 
-  !define MUI_ICON "c:\electrum-ltc\electrum_ltc\gui\icons\electrum.ico"
+  !define MUI_ICON "c:\electrum-grlc\electrum_grlc\gui\icons\electrum.ico"
 
 ;--------------------------------
 ;Pages
@@ -111,7 +111,7 @@ Section
 
   ;Files to pack into the installer
   File /r "dist\electrum-ltc\*.*"
-  File "c:\electrum-ltc\electrum_ltc\gui\icons\electrum.ico"
+  File "c:\electrum-grlc\electrum_grlc\gui\icons\electrum.ico"
 
   ;Store installation folder
   WriteRegStr HKCU "Software\${PRODUCT_NAME}" "" $INSTDIR
@@ -122,21 +122,21 @@ Section
 
   ;Create desktop shortcut
   DetailPrint "Creating desktop shortcut..."
-  CreateShortCut "$DESKTOP\${PRODUCT_NAME}.lnk" "$INSTDIR\electrum-ltc-${PRODUCT_VERSION}.exe" ""
+  CreateShortCut "$DESKTOP\${PRODUCT_NAME}.lnk" "$INSTDIR\electrum-grlc-${PRODUCT_VERSION}.exe" ""
 
   ;Create start-menu items
   DetailPrint "Creating start-menu items..."
   CreateDirectory "$SMPROGRAMS\${PRODUCT_NAME}"
   CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\Uninstall.exe" 0
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\${PRODUCT_NAME}.lnk" "$INSTDIR\electrum-ltc-${PRODUCT_VERSION}.exe" "" "$INSTDIR\electrum-ltc-${PRODUCT_VERSION}.exe" 0
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\${PRODUCT_NAME} Testnet.lnk" "$INSTDIR\electrum-ltc-${PRODUCT_VERSION}.exe" "--testnet" "$INSTDIR\electrum-ltc-${PRODUCT_VERSION}.exe" 0
+  CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\${PRODUCT_NAME}.lnk" "$INSTDIR\electrum-ltc-${PRODUCT_VERSION}.exe" "" "$INSTDIR\electrum-grlc-${PRODUCT_VERSION}.exe" 0
+  CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\${PRODUCT_NAME} Testnet.lnk" "$INSTDIR\electrum-grlc-${PRODUCT_VERSION}.exe" "--testnet" "$INSTDIR\electrum-grlc-${PRODUCT_VERSION}.exe" 0
 
 
   ;Links bitcoin: URI's to Electrum
   WriteRegStr HKCU "Software\Classes\litecoin" "" "URL:litecoin Protocol"
   WriteRegStr HKCU "Software\Classes\litecoin" "URL Protocol" ""
   WriteRegStr HKCU "Software\Classes\litecoin" "DefaultIcon" "$\"$INSTDIR\electrum.ico, 0$\""
-  WriteRegStr HKCU "Software\Classes\litecoin\shell\open\command" "" "$\"$INSTDIR\electrum-ltc-${PRODUCT_VERSION}.exe$\" $\"%1$\""
+  WriteRegStr HKCU "Software\Classes\litecoin\shell\open\command" "" "$\"$INSTDIR\electrum-grlc-${PRODUCT_VERSION}.exe$\" $\"%1$\""
 
   ;Adds an uninstaller possibility to Windows Uninstall or change a program section
   WriteRegStr HKCU "${PRODUCT_UNINST_KEY}" "DisplayName" "$(^Name)"
