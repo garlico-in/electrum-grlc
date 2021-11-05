@@ -65,8 +65,8 @@ You probably need to clear the cache: `rm -rf .buildozer/android/platform/build-
 ### How do I deploy on connected phone for quick testing?
 Assuming `adb` is installed:
 ```
-$ adb -d install -r dist/Electrum-LTC-*-arm64-v8a-debug.apk
-$ adb shell monkey -p org.electrum_ltc.electrum_ltc 1
+$ adb -d install -r dist/Electrum-GRLC-*-arm64-v8a-debug.apk
+$ adb shell monkey -p org.electrum_grlc.electrum_grlc 1
 ```
 
 
@@ -91,7 +91,7 @@ adb logcat | grep python
 ```
 Better `grep` but fragile because of `cut`:
 ```
-adb logcat | grep -F "`adb shell ps | grep org.electrum_ltc.electrum_ltc | cut -c14-19`"
+adb logcat | grep -F "`adb shell ps | grep org.electrum_grlc.electrum_grlc | cut -c14-19`"
 ```
 
 

@@ -111,7 +111,7 @@ class TruncatingMemoryHandler(logging.handlers.MemoryHandler):
 
 
 def _delete_old_logs(path, keep=10):
-    files = sorted(list(pathlib.Path(path).glob("electrum_ltc_log_*.log")), reverse=True)
+    files = sorted(list(pathlib.Path(path).glob("electrum_grlc_log_*.log")), reverse=True)
     for f in files[keep:]:
         try:
             os.remove(str(f))
@@ -129,7 +129,7 @@ def _configure_file_logging(log_directory: pathlib.Path):
 
     timestamp = datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
     PID = os.getpid()
-    _logfile_path = log_directory / f"electrum_ltc_log_{timestamp}_{PID}.log"
+    _logfile_path = log_directory / f"electrum_grlc_log_{timestamp}_{PID}.log"
 
     file_handler = logging.FileHandler(_logfile_path, encoding='utf-8')
     file_handler.setFormatter(file_formatter)

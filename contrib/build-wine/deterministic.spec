@@ -148,7 +148,7 @@ exe_inside_setup_noconsole = EXE(
     debug=False,
     strip=None,
     upx=False,
-    icon=home+'electrum_ltc/gui/icons/electrum.ico',
+    icon=home+'electrum_grlc/gui/icons/electrum.ico',
     console=False)
 
 exe_inside_setup_console = EXE(
@@ -159,7 +159,7 @@ exe_inside_setup_console = EXE(
     debug=False,
     strip=None,
     upx=False,
-    icon=home+'electrum_ltc/gui/icons/electrum.ico',
+    icon=home+'electrum_grlc/gui/icons/electrum.ico',
     console=True)
 
 coll = COLLECT(
@@ -171,6 +171,6 @@ coll = COLLECT(
     strip=None,
     upx=True,
     debug=False,
-    icon=home+'electrum_ltc/gui/icons/electrum.ico',
+    icon=home+'electrum_grlc/gui/icons/electrum.ico',
     console=False,
     name=os.path.join('dist', 'electrum-grlc'))
