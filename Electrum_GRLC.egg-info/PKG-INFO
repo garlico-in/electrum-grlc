@@ -6,16 +6,12 @@ Home-page: https://garlicoin.io
 Author: squ3aky
 Author-email: squ3aky@open-blockchain.io
 License: MIT Licence
+Description: Lightweight Garlicoin Wallet
 Platform: UNKNOWN
 Requires-Python: >=3.6.1
-Provides-Extra: hardware
-Provides-Extra: gui
 Provides-Extra: crypto
-Provides-Extra: tests
-Provides-Extra: full
 Provides-Extra: fast
-License-File: LICENCE
-License-File: AUTHORS
-
-Lightweight Garlicoin Wallet
-
+Provides-Extra: full
+Provides-Extra: gui
+Provides-Extra: hardware
+Provides-Extra: tests
