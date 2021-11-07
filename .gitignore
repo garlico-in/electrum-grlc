@@ -5,7 +5,7 @@
 build/
 dist/
 *.egg/
-Electrum_LTC.egg-info/
+Electrum_GRLC.egg-info/
 electrum_grlc/locale/
 .devlocaltmp/
 *_trial_temp
@@ -46,8 +46,8 @@ contrib/zbar/
 contrib/libusb/
 
 # shared objects
-electrum_ltc/*.so
-electrum_ltc/*.so.0
-electrum_ltc/*.dll
-electrum_ltc/*.dylib
+electrum_grlc/*.so
+electrum_grlc/*.so.0
+electrum_grlc/*.dll
+electrum_grlc/*.dylib
 contrib/osx/*.dylib
