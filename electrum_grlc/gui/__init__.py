@@ -7,5 +7,5 @@
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from . import qt
+    from . import PyQt5
     from . import kivy
