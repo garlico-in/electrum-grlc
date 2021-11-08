@@ -19,7 +19,7 @@ bin/
 .vscode
 electrum-ltc_data
 .DS_Store
-
+dist/*gi
 # tests/tox
 .tox/
 .cache/
@@ -51,3 +51,4 @@ electrum_grlc/*.so.0
 electrum_grlc/*.dll
 electrum_grlc/*.dylib
 contrib/osx/*.dylib
+/venv/
