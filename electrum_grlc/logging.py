@@ -149,7 +149,7 @@ def _configure_stderr_logging(*, verbosity=None, verbosity_shortcuts=None):
     console_stderr_handler = logging.StreamHandler(sys.stderr)
     console_stderr_handler.setFormatter(console_formatter)
     if not verbosity and not verbosity_shortcuts:
-        console_stderr_handler.setLevel(logging.WARNING)
+        console_stderr_handler.setLevel(logging.DEBUG)
         root_logger.addHandler(console_stderr_handler)
     else:
         console_stderr_handler.setLevel(logging.DEBUG)
@@ -337,7 +337,7 @@ def configure_logging(config):
 
     from . import ELECTRUM_VERSION
     from .constants import GIT_REPO_URL
-    _logger.info(f"Electrum-LTC version: {ELECTRUM_VERSION} - https://electrum-ltc.org - {GIT_REPO_URL}")
+    _logger.info(f"Electrum-GRLC version: {ELECTRUM_VERSION} https://gsrlicoin.io - {GIT_REPO_URL}")
     _logger.info(f"Python version: {sys.version}. On platform: {describe_os_version()}")
     _logger.info(f"Logging to file: {str(_logfile_path)}")
     _logger.info(f"Log filters: verbosity {repr(verbosity)}, verbosity_shortcuts {repr(verbosity_shortcuts)}")

@@ -1024,7 +1024,7 @@ def export_meta_gui(electrum_window: 'ElectrumWindow', title, exporter):
     filename = getSaveFileName(
         parent=electrum_window,
         title=_("Select file to save your {}").format(title),
-        filename='electrum-ltc_{}.json'.format(title),
+        filename='electrum-grlc_{}.json'.format(title),
         filter=filter_,
         config=electrum_window.config,
     )

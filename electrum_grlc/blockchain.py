@@ -33,13 +33,17 @@ from .util import bfh, bh2u, with_lock
 from .simple_config import SimpleConfig
 from .logging import get_logger, Logger
 
+def get_n_factor(timestamp):
+    return 9
+
 try:
     import scrypt
-    getPoWHash = lambda x: scrypt.hash(x, x, N=1024, r=1, p=1, buflen=32)
+    getPoWHash = lambda x, t: scrypt.hash(x, x, N=(2 << get_n_factor(t)), r=1, p=1, buflen=32)
 except ImportError:
     util.print_msg("Warning: package scrypt not available; synchronization could be very slow")
-    from .scrypt import scrypt_1024_1_1_80 as getPoWHash
-
+    from .scrypt import scrypt_n_1_1_80
+    getPoWHash = lambda x, t: scrypt_n_1_1_80(x, (2 << get_n_factor(t)))
+import allium_hash
 
 _logger = get_logger(__name__)
 
@@ -90,8 +94,10 @@ def hash_raw_header(header: str) -> str:
     return hash_encode(sha256d(bfh(header)))
 
 def pow_hash_header(header):
-    return hash_encode(getPoWHash(bfh(serialize_header(header))))
-
+    if header.get('block_height') <= 58670:
+        return hash_encode(getPoWHash(bfh(serialize_header(header))))
+    else:
+        return hash_encode(allium_hash.getPoWHash(bfh(serialize_header(header))))
 
 # key: blockhash hex at forkpoint
 # the chain at some key is the best chain that includes the given hash
@@ -541,7 +547,7 @@ class Blockchain(Logger):
             h, t, _ = self.checkpoints[index]
             return t
         # new target
-        # Litecoin: go back the full period unless it's the first retarget
+        # Garlicoin: go back the full period unless it's the first retarget
         first_timestamp = self.get_timestamp(index * 2016 - 1 if index > 0 else 0)
         last = self.read_header(index * 2016 + 2015)
         if not first_timestamp or not last:
@@ -654,7 +660,7 @@ class Blockchain(Logger):
         for index in range(n):
             h = self.get_hash((index+1) * 2016 -1)
             target = self.get_target(index)
-            # Litecoin: also store the timestamp of the last block
+            # Garlicoin: also store the timestamp of the last block
             tstamp = self.get_timestamp((index+1) * 2016 - 1)
             cp.append((h, target, tstamp))
         return cp
